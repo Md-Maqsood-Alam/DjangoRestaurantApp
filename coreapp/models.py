@@ -16,3 +16,8 @@ class Dish(models.Model):
     dish_type=models.CharField(choices=dishTypesChoices, max_length=50)
     price=models.PositiveIntegerField()
     img=models.CharField(max_length=300)
+    description=models.TextField(blank=True)
+    whetherNonVeg=models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.name

@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}	
+    <div id="banner" class="banner full-screen-mode parallax">
+        <div class="container pr">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="banner-static">
+                    <div class="banner-text">
+                        <div class="banner-cell">
+                            <h1>The Chinese Spot</h1>
+                            <h2>Taste That Pulls You back</h2>
+                            <p>Unforgettable Flavours, Quick Deliveries and Awesome Service.</p>
+                            <div class="book-btn">
+                                <a href="{% url 'reservation' %}" class="table-btn hvr-underline-from-center">Book my Table</a>
+                                <a href="#" class="table-btn hvr-underline-from-center">Order Delivery</a>
+                            </div>
+                        </div>
+                        <!-- end banner-cell -->
+                    </div>
+                    <!-- end banner-text -->
+                </div>
+                <!-- end banner-static -->
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end banner -->
+
+    <div id="about" class="about-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <h2 class="block-title"> About Us </h2>
+                        <p>At The Chinese Point, we don't just make food. We make people happy. The Chinese Spot started with the belief that every meal should be special, and we carry that belief into everything we do.</p>
+                        <p>With more than 10 years of experience under our belt, we understand how to best serve our customers through tried and tested service principles: We prepare food we are proud to serve and deliver it fast, with a smile.</p>
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <div class="about-images">
+                            <img class="about-main" src="{% static 'images/about-main.jpg' %}" alt="About Main Image">
+                            <img class="about-inset" src="{% static 'images/about-inset.jpg' %}" alt="About Inset Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <div id="menu" class="menu-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <h2 class="block-title text-center">
+						Our Menu 	
+					</h2>
+                        <p class="title-caption text-center">From tasty rolls to relishable biryanis we have them all. </p>
+                    </div>
+                    <div class="tab-menu">
+                        <div class="slider slider-nav">
+                            <div class="tab-title-menu">
+                                <h2>STARTERS</h2>
+                                <p> <i class="flaticon-canape"></i> </p>
+                            </div>
+                            <div class="tab-title-menu">
+                                <h2>MAIN DISHES</h2>
+                                <p> <i class="flaticon-dinner"></i> </p>
+                            </div>
+                            <div class="tab-title-menu">
+                                <h2>DESERTS</h2>
+                                <p> <i class="flaticon-desert"></i> </p>
+                            </div>
+                            <div class="tab-title-menu">
+                                <h2>DRINKS</h2>
+                                <p> <i class="flaticon-coffee"></i> </p>
+                            </div>
+                        </div>
+                        <div class="slider slider-single">
+                            <div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-01.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>GARLIC BREAD</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$8.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-02.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>MIXED SALAD</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$25</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-03.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>BBQ CHICKEN WINGS</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$10</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                            </div>
+                            <div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-04.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>MEAT FEAST PIZZA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-05.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>CHICKEN TIKKA MASALA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$15</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-06.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>SPICY MEATBALLS</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$6.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                            </div>
+                            <div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-07.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>CHOCOLATE FUDGECAKE</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$4.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-08.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>CHICKEN TIKKA MASALA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$9.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-09.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>CHICKEN TIKKA MASALA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$10</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                            </div>
+                            <div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-10.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>MEAT FEAST PIZZA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$12.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-09.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>CHICKEN TIKKA MASALA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$9.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                    <div class="offer-item">
+                                        <img src="{% static 'images/menu-item-thumbnail-08.jpg' %}" alt="" class="img-responsive">
+                                        <div>
+                                            <h3>CHICKEN TIKKA MASALA</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis eleifend dapibus.
+                                            </p>
+                                        </div>
+                                        <span class="offer-price">$5.5</span>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end tab-menu -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end menu -->
+    <div id="reservation" class="reservations-main pad-top-10 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="reserve-book-btn text-center">
+                    <button class="hvr-underline-from-center"><a href="{% url 'reservation' %}" >Book my Table</a></button>
+                    <button  class="hvr-underline-from-center"><a href="#">Order Delivery</a></button>
+                </div>
+                <!-- end reservations-box -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end reservations-main -->
+{% endblock %}
