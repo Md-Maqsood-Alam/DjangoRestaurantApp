@@ -900,11 +900,11 @@ html, body{ height: 100%; }
 }
 
 .tab-menu .is-active h2{
-	color:#fff;
+	color: #fff;
 	border-bottom: 1px solid #fff;
 }
 .tab-menu .is-active p{
-	color:#fff;
+    color: black;
 }
 
 /*------------------------------------------------------------------
