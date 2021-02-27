@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Dish(models.Model):
     dishTypesChoices=(
@@ -21,3 +21,14 @@ class Dish(models.Model):
     
     def __str__(self):
         return self.name
+
+class Reservation(models.Model):
+    name=models.CharField(max_length=200)
+    email=models.EmailField()
+    phone_number=models.CharField(max_length=10)
+    num_people=models.PositiveIntegerField(default=1)
+    date_and_time=models.DateTimeField()
+    user=models.ForeignKey(User, null=True, default=None, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return '{}|{}|{}'.format(self.date_and_time,self.num_people,self.name)

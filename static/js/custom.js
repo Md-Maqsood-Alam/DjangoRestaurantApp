@@ -6,6 +6,10 @@
     Website: https://melodythemes.com
     Version: 1.0
 /****************************************** */
+var message_element=document.getElementById('server-messages');
+setTimeout(function(){
+	message_element.style.display="none";
+},3000);
 
 (function($) {
     "use strict";
@@ -273,37 +277,37 @@
 		 /* ==============================================
 			CONTACT FORM
 		=============================================== */	
-			 jQuery(document).ready(function() {
-				$('#contact-form').submit(function() {
-					var action = $(this).attr('action');
-					$("#message").slideUp(750, function() {
-						$('#message').hide();
-						$('#submit')
-							.after('<img src="images/ajax-loader.gif" class="loader" />')
-							.attr('disabled', 'disabled');
-						$.post(action, {
-								first_name: $('#first_name').val(),
-								email: $('#email').val(),
-								phone: $('#phone').val(),
-								no_of_persons: $('#no_of_persons').val(),
-								preferred_food: $('#preferred_food').val(),
-								occasion: $('#occasion').val(),
-								verify: $('#verify').val()
-							},
-							function(data) {
-								document.getElementById('message').innerHTML = data;
-								$('#message').slideDown('slow');
-								$('#contact-form img.loader').fadeOut('slow', function() {
-									$(this).remove()
-								});
-								$('#submit').removeAttr('disabled');
-								if (data.match('success') != null) $('#contact-form').slideUp('slow');
-							}
-						);
-					});
-					return false;
-				});
-			});
+			//  jQuery(document).ready(function() {
+			// 	$('#contact-form').submit(function() {
+			// 		var action = $(this).attr('action');
+			// 		$("#message").slideUp(750, function() {
+			// 			$('#message').hide();
+			// 			$('#submit')
+			// 				.after('<img src="images/ajax-loader.gif" class="loader" />')
+			// 				.attr('disabled', 'disabled');
+			// 			$.post(action, {
+			// 					first_name: $('#first_name').val(),
+			// 					email: $('#email').val(),
+			// 					phone: $('#phone').val(),
+			// 					no_of_persons: $('#no_of_persons').val(),
+			// 					preferred_food: $('#preferred_food').val(),
+			// 					occasion: $('#occasion').val(),
+			// 					verify: $('#verify').val()
+			// 				},
+			// 				function(data) {
+			// 					document.getElementById('message').innerHTML = data;
+			// 					$('#message').slideDown('slow');
+			// 					$('#contact-form img.loader').fadeOut('slow', function() {
+			// 						$(this).remove()
+			// 					});
+			// 					$('#submit').removeAttr('disabled');
+			// 					if (data.match('success') != null) $('#contact-form').slideUp('slow');
+			// 				}
+			// 			);
+			// 		});
+			// 		return false;
+			// 	});
+			// });
 		 
 	
 })(jQuery);

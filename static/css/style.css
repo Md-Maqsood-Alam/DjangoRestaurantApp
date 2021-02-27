@@ -1543,6 +1543,31 @@ html, body{ height: 100%; }
 	border:none;
 }
 
+.reserve-book-btn input a{
+	color: #fff;
+}
+
+.reserve-book-btn input:hover {
+    background: none;
+    color: #202020;
+}
+
+.reserve-book-btn input  {
+    color: #fff;
+    min-width: 219px;
+    padding: 10.5px 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.reserve-book-btn input:hover a{
+	background:none;
+	border:none;
+}
+
 textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:focus{
     outline: none !important;
 }

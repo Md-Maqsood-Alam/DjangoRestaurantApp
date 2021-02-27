@@ -1,5 +1,8 @@
-from django.shortcuts import render
-from .models import Dish
+from django.shortcuts import render, redirect
+from .models import Dish, Reservation
+from django.urls import reverse
+from datetime import datetime
+from django.contrib import messages
 # Create your views here.
 def home(request):
     menu=dict()
@@ -10,4 +13,20 @@ def home(request):
     return render(request,'index.html',{'menu':menu})
 
 def reservation(request):
+    if request.method=='POST':
+        reservation=Reservation(
+            name=request.POST.get('form_name'),
+            email=request.POST.get('email'),
+            phone_number=(request.POST.get('phone')),
+            num_people=request.POST.get('no_of_persons'),
+            date_and_time=datetime.strptime('{} {}'.format(
+                request.POST.get('date-picker'),
+                request.POST.get('time-picker')
+            ), '%d.%m.%Y %H:%M %p'),
+            )
+        reservation.save()
+        if request.user.is_authenticated:
+            request.user.reservation_set.add(reservation)
+        messages.add_message(request,messages.INFO, 'Your Reservation Has been Made Successfully')
+        return redirect(reverse('home'))
     return render(request,'reservation.html')
