@@ -24,6 +24,8 @@ def reservation(request):
                 request.POST.get('time-picker')
             ), '%d.%m.%Y %H:%M %p'),
             )
+        if request.POST.get('occasion'):
+            reservation.occasion=request.POST.get('occasion')
         reservation.save()
         if request.user.is_authenticated:
             request.user.reservation_set.add(reservation)

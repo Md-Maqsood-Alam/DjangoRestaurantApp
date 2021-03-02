@@ -44,10 +44,10 @@
     <div id="loader">
         <div id="status"></div>
     </div>
-    <div id="server-messages" style="background-color: #9ACD32">
+    <div id="server-messages" style="background-color: lightgreen; text-align: center">
         {% if messages %}
             {% for message in messages %}
-            <li style="color: white">{{ message }}</li>
+            <li style="color: white">&#9888;  {{ message }}</li>
             {% endfor %}
         {% endif %}
     </div>
@@ -81,10 +81,10 @@
                                     <li><a href="{% ifnotequal request.path '/' %}{% url 'home' %}{% endifnotequal %}#footer">Contact us</a></li>
                                     {% if user.is_authenticated %}
                                         <li><a href="#">My Account</a></li>
-                                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                                        <li><a href="{% url 'account_logout' %}">Logout</a></li>
                                     {% else %}
-                                        <li {% ifequal request.path '/login/' %}class="active"{% endifequal %}><a href="{% url 'login' %}">Login</a></li>
-                                        <li><a href="#">SignUp</a></li>
+                                        <li {% ifequal request.path '/login/' %}class="active"{% endifequal %}><a href="{% url 'account_login' %}">Login</a></li>
+                                        <li><a href="{% url 'account_signup' %}">SignUp</a></li>
                                     {% endif %}
                                 </ul>
                             </div>

@@ -28,6 +28,7 @@ class Reservation(models.Model):
     phone_number=models.CharField(max_length=10)
     num_people=models.PositiveIntegerField(default=1)
     date_and_time=models.DateTimeField()
+    occasion=models.CharField(max_length=50, null=True, blank=True)
     user=models.ForeignKey(User, null=True, default=None, on_delete=models.SET_NULL)
 
     def __str__(self):
