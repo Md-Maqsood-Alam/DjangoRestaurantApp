@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100" style="background: url({% static 'images/myaccount_background.jpg' %}); background-size: 100% 100%; background-repeat: no-repeat">
+    <div class="container">
+        <div class="row">
+            <div class="form-profile-box">
+                <br><br><br>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: rgb(236, 243, 247, 0.75); border-radius: 6px;">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <h2 class="block-title text-center" style="padding-top: 20px;">
+                    Profile Update			
+                </h2><hr>
+                    </div>
+                    <h4 class="form-title">Please enter the required details</h4>
+                    <form id="contact-form" method="post" class="reservations-box" name="contactform" action="">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.first_name }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.last_name }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.address }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.city }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.state }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.country }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.zip }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-box">
+                            	{{ form.phone_number }}
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        {% if form.errors %}
+                        <div class="alert alert-info alert-dismissible col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin: 16px; width: 93%">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&#10005;</a>
+                        	{% for err in form.non_field_errors %}
+                        		{{ err }}<br>
+                        	{% endfor %}
+                        	{% for field in form %}
+	                        	{% for error in field.errors %}
+	                        		{{ error }}<br>
+	                        	{% endfor %}
+	                        {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="reserve-book-btn text-center">
+                                <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit">Save</button>
+                            </div><hr>
+                        </div>
+                        <!-- end col -->
+                    </form>
+                    <!-- end form -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end reservations-box -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end reservations-main -->
+{% endblock %}

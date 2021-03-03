@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My Account{% endblock %}
+{% block content %}
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100" style="background: url({% static 'images/myaccount_background.jpg' %}); background-size: 100% 100%; background-repeat: no-repeat">
+    <div class="container">
+        <div class="row">
+            <div class="form-myaccount-box">
+                <br><br><br>
+                <div class="col-sm-4" style="background-color: rgb(236, 243, 247, 0.75); border-radius: 6px;">
+                    <h2 class="block-title text-center" style="padding-top: 50px;">My Profile</h2><br><br>
+                    <table class="table" style="border: none; font-size: 14px; font-family: nautilus_pompiliusregular; text-align: center;">
+                        <tbody>
+                            <tr><td>Name</td><td>{{ user.customer.full_name }}</td></tr>
+                            <tr><td>Phone</td><td>+91 {{ user.customer.phone_number }}</td></tr>
+                            <tr><td>Email</td><td>{{ user.email }}</td></tr>
+                            <tr><td>Address</td><td>{{ user.customer.full_address }}</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="text-center"> 
+                            <a class="btn btn-primary" href="{% url 'profile_update' %}" style="background-color: #e75b1e; padding: 15px; font-family: Georgia; font-size: 16px;" role="button">Edit Profile</a>
+                            </div><br>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="text-center">
+                            <a class="btn btn-primary" href="#" style="background-color: #e75b1e; padding: 15px; font-family: Georgia; font-size: 16px;" role="button">Change Password</a>
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h2 class="block-title text-center" style="padding-top: 30px;">My Orders</h2><br>
+                    <table class="table" style="border: none; font-size: 14px; font-family: nautilus_pompiliusregular; text-align: left;">
+                        <thead>
+                            <tr  style="text-align: center;">
+                                <th>Date</th><th>Dishes</th><th>Total</th><th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Nov 16, 2020</td><td>Chicken Roll (&times; 2) | Chicken Lajawab (&times; 1)</td><td>&#8377; 280</td><td style="color: lightseagreen;">On It's Way</td></tr>
+                            <tr><td>Nov 16, 2020</td><td>Chicken Roll (&times; 2) | Chicken Lajawab (&times; 1)</td><td>&#8377; 280</td><td style="color: lightgreen;">Delivered</td></tr>
+                            <tr><td>Nov 16, 2020</td><td>Chicken Roll (&times; 2) | Chicken Lajawab (&times; 1)</td><td>&#8377; 280</td><td style="color: lightgreen;">Delivered</td></tr>
+                            <tr><td>Nov 16, 2020</td><td>Chicken Roll (&times; 2) | Chicken Lajawab (&times; 1)</td><td>&#8377; 280</td><td style="color: orange;">Cancelled</td></tr>
+                            <tr><td>Nov 16, 2020</td><td>Chicken Roll (&times; 2) | Chicken Lajawab (&times; 1)</td><td>&#8377; 280</td><td style="color: lightgreen;">Delivered</td></tr>
+                            <tr><td>Nov 16, 2020</td><td>Chicken Roll (&times; 2) | Chicken Lajawab (&times; 1)</td><td>&#8377; 280</td><td style="color: lightgreen;">Delivered</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

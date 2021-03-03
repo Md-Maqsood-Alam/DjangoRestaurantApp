@@ -1425,6 +1425,16 @@ html, body{ height: 100%; }
 	margin:0 auto;
 }
 
+.form-profile-box{
+	width:70%;
+	margin:0 auto;
+}
+
+.form-myaccount-box{
+	width:100%;
+	margin:0 auto;
+}
+
 .reservations-main h4{
 	color: gray;
 	font-size: 20px;
@@ -1456,7 +1466,6 @@ html, body{ height: 100%; }
 	background:#f5f5f5;
 	color:#202020;
 	padding:12px;
-	text-transform:capitalize;
 	border-radius: 4px;
 	opacity: 1;
 	min-height:54px;

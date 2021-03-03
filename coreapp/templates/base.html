@@ -37,7 +37,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -80,8 +79,8 @@
                                     <li><a href="#">Order</a></li>
                                     <li><a href="{% ifnotequal request.path '/' %}{% url 'home' %}{% endifnotequal %}#footer">Contact us</a></li>
                                     {% if user.is_authenticated %}
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="{% url 'account_logout' %}">Logout</a></li>
+										<li><a href="{% url 'account_logout' %}">Logout</a></li>
+										<li><a href="{% url 'myaccount' %}">MyAccount</a></li>
                                     {% else %}
                                         <li {% ifequal request.path '/login/' %}class="active"{% endifequal %}><a href="{% url 'account_login' %}">Login</a></li>
                                         <li><a href="{% url 'account_signup' %}">SignUp</a></li>
@@ -93,7 +92,7 @@
                         <!-- end navbar -->
                     </div>
                 </div>
-                <!-- end row -->
+                <!-- end row -->           
             </div>
             <!-- end container-fluid -->
         </header>
