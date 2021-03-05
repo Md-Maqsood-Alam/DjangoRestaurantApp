@@ -43,23 +43,23 @@
     IMPORT FILES
 -------------------------------------------------------------------*/
 
-@import url(owl.theme.css);
-@import url(owl.carousel.css);
-@import url(slick.css);
-@import url(flaticon.css);
-@import url(font-awesome.min.css);
-@import url(bootstrap-datetimepicker.css);
-@import url(bootstrap-select.min.css);
-@import url(normalize.css);
-@import url(animate.min.css);
+@import url("owl.theme.a47f8d993a3e.css");
+@import url("owl.carousel.a242574d1733.css");
+@import url("slick.88b2daf9da57.css");
+@import url("flaticon.9fcd85c4d287.css");
+@import url("font-awesome.min.bf0c425cdb73.css");
+@import url("bootstrap-datetimepicker.c4af5e45fdd3.css");
+@import url("bootstrap-select.min.1dde27fd6255.css");
+@import url("normalize.1e9c0f3b13da.css");
+@import url("animate.min.ca2a1b0cb02d.css");
 
 /*------------------------------------------------------------------
     SKELETON
 -------------------------------------------------------------------*/
 @font-face {
     font-family: 'nautilus_pompiliusregular';
-    src: url('../fonts/nautilus-webfont.woff2') format('woff2'),
-         url('../fonts/nautilus-webfont.woff') format('woff');
+    src: url("../fonts/nautilus-webfont.b4dd79b833d9.woff2") format('woff2'),
+         url("../fonts/nautilus-webfont.38aa04277e36.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -227,7 +227,7 @@ html, body{ height: 100%; }
      position: absolute;
      left: 50%;
      top: 50%;
-     background-image: url(../images/loader-animation.gif);
+     background-image: url("../images/loader-animation.a9ffd714fbd4.gif");
      background-repeat: no-repeat;
      background-position: center;
      margin: -100px 0 0 -100px;
@@ -246,7 +246,7 @@ html, body{ height: 100%; }
 	bottom:20px;
 	right:40px;
 	display:none;			
-	background:url(../images/icon_top.png) no-repeat;
+	background:url("../images/icon_top.99dcb864e2f8.png") no-repeat;
 }
 
 .scrollup:hover{
@@ -383,7 +383,7 @@ html, body{ height: 100%; }
 -------------------------------------------------------------------*/
 
 .banner{
-	background:url(../images/banner.jpg) no-repeat center top;
+	background:url("../images/banner.0f66d4a97f17.jpg") no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
@@ -657,7 +657,7 @@ html, body{ height: 100%; }
     SPECIAL-MENU AREA
 -------------------------------------------------------------------*/
 .special-menu{
-	background:url(../images/special_menu_bg.jpg) no-repeat center;
+	background:url("../images/special_menu_bg.9ed72d0c2b95.jpg") no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
@@ -983,7 +983,7 @@ button:link {
 -------------------------------------------------------------------*/
 
 .team-main{
-	background:url(../images/team_bg.jpg) no-repeat center;
+	background:url("../images/team_bg.58f14a50d21f.jpg") no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
@@ -1241,7 +1241,7 @@ button:link {
 -------------------------------------------------------------------*/
 
 .blog-main{
-	background:url(../images/blog_bg.jpg) no-repeat center;
+	background:url("../images/blog_bg.10c33fed2843.jpg") no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
@@ -1368,7 +1368,7 @@ button:link {
 -------------------------------------------------------------------*/
 
 .pricing-main{
-	background:url(../images/full-bg.png) no-repeat center ;
+	background:url("../images/full-bg.deb209e72f7c.png") no-repeat center ;
 	background-size:cover;
 }
 
@@ -1660,7 +1660,7 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 
 .footer-main{}
 .footer-news{
-	background:url(../images/newsletter-bg.jpg) no-repeat center;
+	background:url("../images/newsletter-bg.f38f7ae9cb15.jpg") no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
@@ -1764,9 +1764,9 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     padding: 4px;
 }
 .footer-box {
-	background-image:-moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
-	background-image:-webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
-	background-image:radial-gradient(ellipse at center, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url(../images/footer_background.jpg);
+	background-image:-moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url("../images/footer_background.4b7fc60f1a83.jpg");
+	background-image:-webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url("../images/footer_background.4b7fc60f1a83.jpg");
+	background-image:radial-gradient(ellipse at center, rgba(0, 0, 0, 0.57) 0%,rgba(0, 0, 0, 0.87) 100%), url("../images/footer_background.4b7fc60f1a83.jpg");
 	background-color:#111;background-position:center;background-repeat:no-repeat;background-size:cover
 	}
 .socials-box li {

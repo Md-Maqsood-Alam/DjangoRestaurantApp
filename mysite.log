@@ -1,0 +1,116 @@
+[05/Mar/2021 23:24:56] INFO [django.utils.autoreload:578] Watching for file changes with StatReloader
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:267] Waiting for apps ready_event.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:273] Apps ready_event triggered. Sending autoreload_started signal.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\restaurantDjango\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\admin\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\auth\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\contenttypes\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\sessions\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\messages\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\whitenoise\runserver_nostatic\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\sites\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\restaurantDjango\coreapp\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\restaurantDjango\customers\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\restaurantDjango\foodcart\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\allauth\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\allauth\account\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\allauth\socialaccount\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\crispy_forms\locale with glob **/*.mo.
+[05/Mar/2021 23:24:56] DEBUG [django.utils.autoreload:226] Watching dir C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\cart\locale with glob **/*.mo.
+[05/Mar/2021 23:25:20] ERROR [django.request:222] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\maqso\restaurantDjango\coreapp\views.py", line 18, in home
+    return render(request,'index.html',{'menu':menu, 'todaysSpecials': todaysSpecials})
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'images/favicon.ico'
+[05/Mar/2021 23:25:20] ERROR [django.server:154] "GET / HTTP/1.1" 500 27
+[05/Mar/2021 23:26:23] ERROR [django.request:222] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\maqso\restaurantDjango\coreapp\views.py", line 18, in home
+    return render(request,'index.html',{'menu':menu, 'todaysSpecials': todaysSpecials})
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\templatetags\static.py", line 106, in render
+    url = self.url(context)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\templatetags\static.py", line 103, in url
+    return self.handle_simple(path)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\templatetags\static.py", line 118, in handle_simple
+    return staticfiles_storage.url(path)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\storage.py", line 153, in url
+    return self._url(self.stored_name, name, force)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\storage.py", line 132, in _url
+    hashed_name = hashed_name_func(*args)
+  File "C:\Users\maqso\.virtualenvs\restaurantDjango-8ai-hJB_\lib\site-packages\django\contrib\staticfiles\storage.py", line 420, in stored_name
+    raise ValueError("Missing staticfiles manifest entry for '%s'" % clean_name)
+ValueError: Missing staticfiles manifest entry for 'images/favicon.ico'
+[05/Mar/2021 23:26:23] ERROR [django.server:154] "GET / HTTP/1.1" 500 27
+[05/Mar/2021 23:27:35] DEBUG [django.utils.autoreload:341] File C:\Users\maqso\restaurantDjango\myrestaurant\settings.py. is_changed: False, is_new: True
+[05/Mar/2021 23:27:35] DEBUG [django.utils.autoreload:342] File C:\Users\maqso\restaurantDjango\myrestaurant\settings.py previous mtime: None, current mtime: 1614967054.176443
+[05/Mar/2021 23:27:35] DEBUG [django.utils.autoreload:302] C:\Users\maqso\restaurantDjango\myrestaurant\settings.py notified as changed. Signal results: [(<function translation_file_changed at 0x000001B1F2ACCA60>, None)].
+[05/Mar/2021 23:27:35] INFO [django.utils.autoreload:203] C:\Users\maqso\restaurantDjango\myrestaurant\settings.py changed, reloading.
