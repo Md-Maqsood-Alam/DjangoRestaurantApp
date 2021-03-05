@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load cart_tag %}
+{% load static %}
+{% block title %}Order{% endblock %}
+{% block content %}
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100">
+    <div class="container">
+        <div class="row">
+            <div class="form-myaccount-box">
+                <br><br><br>
+                <h2 class="block-title text-center">
+                    Order Delivery
+                </h2><hr><br>
+                <div class="row d-flex justify-content-center">
+			        <div class="col-md-12">
+			            <div class="card p-4 mt-3">
+			                <div class="d-flex justify-content-center px-5">
+                				<div class="search"><form method="get" action=""><input type="text" class="search-input" placeholder="Search Dishes..." name="q" required="required"><button type="submit" class="btn btn-primary search-icon " name="Submit"><i class="fa fa-search"></i></button></form></div>
+							</div>					
+						</div>
+					</div>
+				</div>
+				<div id="menu" class="menu-main pad-top-100 pad-bottom-100" style="margin: 0;">
+					<div class="container">
+						<div class="row">							
+				        	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="position: sticky; top: 100px; background-color: rgb(236, 243, 247, 0.75); border-radius: 6px;padding-top: 15px; padding-bottom: 15px">
+								<h2 class="block-title text-center"">Cart</h2><br>
+								<p style="text-align: left; font-family: Serif;">Total Items: {{ request.session.cart|length }} | <a type="button" class="btn btn-warning btn-sm" href="{% url 'cart_clear' %}" role="button">Empty Cart <i class="fa fa-trash"></i></a></p>
+			                    <table class="table" style="border: none; font-size: 14px; font-family: nautilus_pompiliusregular; text-align: center;">
+			                        <tbody>
+			                        {% for key,value in request.session.cart.items %}
+			                            <tr>
+				                            <td>{{ value.name }}</td>
+				                            <td>
+					                            <span class="btn-group" role="group">
+													<a type="button" class="btn btn-default btn-xs" href="{% url 'item_increment' key %}"><strong>+</strong></a>
+													<button class="btn btn-primary btn-xs" style="font-family: serif;">{{ value.quantity }}</button>
+													<a type="button" class="btn btn-default btn-xs" href="{% url 'item_decrement' key %}"><strong>-</strong></a>
+												</span>
+				                            </td>
+				                            <td style="font-family: serif;">
+				                            	&#8377; {{ value.price|multiply:value.quantity }}
+				                            </td>
+				                    	</tr>
+				                    {% endfor %}
+				                    	<tr>
+				                    		<td style="text-align: left; font-size: 18px;font-family: Georgia;">Subtotal : </td>
+				                    		<td> </td>
+				                    		<td style="text-align: right; font-size: 18px; font-family: Serif;">&#8377; {{ subtotal }}</td>
+				                    	</tr>
+			                        </tbody>
+			                    </table>
+			                    <div class="text-center">
+			                    	<a href="{% url 'checkout' %}" type="button" class="btn btn-success btn-block" style="font-family: Georgia; font-size: 18px;" role="button">CHECKOUT &#8594;</a>
+			                    </div>
+							</div>
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+								<div class="tab-menu" style="border-radius: 4px">
+								{% if searched_for %}
+								<p style="text-align: left; font-family: Serif;">Searched For : {{ searched_for }}  |  <a type="button" class="btn btn-primary btn-xs" href="{% url 'order' %}" role="button">Show All</a></p>
+								{% endif %}
+									<div class="slider slider-nav">
+										{% if menu.Starters %}
+										<div class="tab-title-menu">
+											<h2>STARTERS</h2>
+										</div>
+										{% endif %}
+										{% if menu.Main_Dishes %}
+										<div class="tab-title-menu">
+											<h2>MAIN DISHES</h2>
+										</div>
+										{% endif %}
+										{% if menu.Noodles_and_Rice %}
+										<div class="tab-title-menu">
+											<h2>NOODLES & RICE</h2>
+										</div>
+										{% endif %}
+										{% if menu.Rolls %}
+										<div class="tab-title-menu">
+											<h2>ROLLS</h2>
+										</div>
+										{% endif %}
+									</div>
+									<div class="slider slider-single">
+										{% if menu.Starters %}
+										<div>
+											{% for dish in menu.Starters %}
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+												<div class="offer-item">
+													<img src="{% static dish.img %}" style="padding: 1px; border-radius: 20%;" alt="{{ dish.name }}" class="img-responsive">
+													<div>
+														<h3>{{ dish.name }}</h3>
+														<p>&#8377; {{ dish.price }}</p>
+														{% if dish.id|stringformat:"i" in request.session.cart %}
+														<span class="btn-group" style="display: flex;" role="group">
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_increment' dish.id %}"><strong>+</strong></a>
+															<button class="btn btn-primary" style="flex: 1;">
+																{% for key,value in request.session.cart.items %}
+																{% ifequal dish.id|stringformat:"i" key %}{{ value.quantity }}{% endifequal %}
+																{% endfor %}
+															</button>
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_decrement' dish.id %}"><strong>-</strong></a>
+														</span>
+														{% else %}
+														<span>
+															<a type="button" class="btn btn-primary btn-block" href="{% if not dish.available %}javascript:void(0){% else %}{% url 'cart_add' dish.id %}{% endif %}" {% if not dish.available %}disabled{% endif %}>{% if not dish.available %}Currently Unavailable{% else %}Add{% endif %}</a>
+														</span>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											<!-- end col -->
+											{% endfor %}
+										</div>
+										{% endif %}
+										{% if menu.Main_Dishes %}
+										<div>
+											{% for dish in menu.Main_Dishes %}
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+												<div class="offer-item">
+													<img src="{% static dish.img %}" style="padding: 1px; border-radius: 20%;" alt="{{ dish.name }}" class="img-responsive">
+													<div>
+														<h3>{{ dish.name }}</h3>
+														<p>&#8377; {{ dish.price }}</p>
+														{% if dish.id|stringformat:"i" in request.session.cart %}
+														<span class="btn-group" style="display: flex;" role="group">
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_increment' dish.id %}"><strong>+</strong></a>
+															<button class="btn btn-primary" style="flex: 1;">
+																{% for key,value in request.session.cart.items %}
+																{% ifequal dish.id|stringformat:"i" key %}{{ value.quantity }}{% endifequal %}
+																{% endfor %}
+															</button>
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_decrement' dish.id %}"><strong>-</strong></a>
+														</span>
+														{% else %}
+														<span>
+															<a type="button" class="btn btn-primary btn-block" href="{% if not dish.available %}javascript:void(0){% else %}{% url 'cart_add' dish.id %}{% endif %}" {% if not dish.available %}disabled{% endif %}>{% if not dish.available %}Currently Unavailable{% else %}Add{% endif %}</a>
+														</span>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											<!-- end col -->
+											{% endfor %}
+										</div>
+										{% endif %}
+										{% if menu.Noodles_and_Rice %}
+										<div>
+											{% for dish in menu.Noodles_and_Rice %}
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+												<div class="offer-item">
+													<img src="{% static dish.img %}" style="padding: 1px; border-radius: 20%;" alt="{{ dish.name }}" class="img-responsive">
+													<div>
+														<h3>{{ dish.name }}</h3>
+														<p>&#8377; {{ dish.price }}</p>
+														{% if dish.id|stringformat:"i" in request.session.cart %}
+														<span class="btn-group" style="display: flex;" role="group">
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_increment' dish.id %}"><strong>+</strong></a>
+															<button class="btn btn-primary" style="flex: 1;">
+																{% for key,value in request.session.cart.items %}
+																{% ifequal dish.id|stringformat:"i" key %}{{ value.quantity }}{% endifequal %}
+																{% endfor %}
+															</button>
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_decrement' dish.id %}"><strong>-</strong></a>
+														</span>
+														{% else %}
+														<span>
+															<a type="button" class="btn btn-primary btn-block" href="{% if not dish.available %}javascript:void(0){% else %}{% url 'cart_add' dish.id %}{% endif %}" {% if not dish.available %}disabled{% endif %}>{% if not dish.available %}Currently Unavailable{% else %}Add{% endif %}</a>
+														</span>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											<!-- end col -->
+											{% endfor %}
+										</div>
+										{% endif %}
+										{% if menu.Rolls %}
+										<div>
+											{% for dish in menu.Rolls %}
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+												<div class="offer-item">
+													<img src="{% static dish.img %}" style="padding: 1px; border-radius: 20%;" alt="{{ dish.name }}" class="img-responsive">
+													<div>
+														<h3>{{ dish.name }}</h3>
+														<p>&#8377; {{ dish.price }}</p>
+														{% if dish.id|stringformat:"i" in request.session.cart %}
+														<span class="btn-group" style="display: flex;" role="group">
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_increment' dish.id %}"><strong>+</strong></a>
+															<button class="btn btn-primary" style="flex: 1;">
+																{% for key,value in request.session.cart.items %}
+																{% ifequal dish.id|stringformat:"i" key %}{{ value.quantity }}{% endifequal %}
+																{% endfor %}
+															</button>
+															<a type="button" class="btn btn-default" style="flex: 1;" href="{% url 'item_decrement' dish.id %}"><strong>-</strong></a>
+														</span>
+														{% else %}
+														<span>
+															<a type="button" class="btn btn-primary btn-block" href="{% if not dish.available %}javascript:void(0){% else %}{% url 'cart_add' dish.id %}{% endif %}" {% if not dish.available %}disabled{% endif %}>{% if not dish.available %}Currently Unavailable{% else %}Add{% endif %}</a>
+														</span>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											<!-- end col -->
+											{% endfor %}
+										</div>
+										{% endif %}
+									</div>
+									<div class="text-center">
+			                    		<a href="{% url 'checkout' %}" type="button" class="btn btn-success btn-lg" style="font-family: Georgia; font-size: 18px; margin-top: 15px;" role="button">CHECKOUT &#8594;</a>
+			                    	</div>
+								</div>
+								<!-- end tab-menu -->
+							</div>
+							<!-- end col -->
+						</div>
+						<!-- end row -->
+					</div>
+					<!-- end container -->
+				</div>
+				<!-- end menu -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -51,7 +51,7 @@
         {% endif %}
     </div>
     <div id="site-header">
-        <header id="header" class="header-block-top" {% ifnotequal request.path '/' %}style="background-color: black"{% endifnotequal %}>
+        <header id="header" class="header-block-top" {% ifequal request.path '/order/' %}style="background-color: black"{% endifequal %}>
             <div class="container">
                 <div class="row">
                     <div class="main-menu">
@@ -76,14 +76,19 @@
                                     <li ><a href="{% ifnotequal request.path '/' %}{% url 'home' %}{% endifnotequal %}#about">About us</a></li>
                                     <li><a href="{% ifnotequal request.path '/' %}{% url 'home' %}{% endifnotequal %}#menu">Menu</a></li>
                                     <li {% ifequal request.path '/reservation/' %}class="active"{% endifequal %}><a href="{% url 'reservation' %}">Reservation</a></li>
-                                    <li><a href="#">Order</a></li>
+                                    <li><a href="{% url 'order' %}">Order</a></li>
                                     <li><a href="{% ifnotequal request.path '/' %}{% url 'home' %}{% endifnotequal %}#footer">Contact us</a></li>
                                     {% if user.is_authenticated %}
-										<li><a href="{% url 'account_logout' %}">Logout</a></li>
-										<li><a href="{% url 'myaccount' %}">MyAccount</a></li>
+										<li {% ifequal request.path '/customer/myaccount/' %}class="active"{% endifequal %}><a href="{% url 'myaccount' %}">My Account</a></li>
+                                    	<li><a href="{% url 'account_logout' %}">Logout</a></li>
+                                    	<li><a class="btn btn-link" href="{% url 'checkout' %}" type="button">
+	                                    	<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+	  											<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+											</svg><sup>{{ request.session.cart|length }}</sup>
+										</a></li>
                                     {% else %}
-                                        <li {% ifequal request.path '/login/' %}class="active"{% endifequal %}><a href="{% url 'account_login' %}">Login</a></li>
-                                        <li><a href="{% url 'account_signup' %}">SignUp</a></li>
+                                        <li {% ifequal request.path '/accounts/login/' %}class="active"{% endifequal %}><a href="{% url 'account_login' %}">Login</a></li>
+                                        <li {% ifequal request.path '/accounts/signup/' %}class="active"{% endifequal %}><a href="{% url 'account_signup' %}">SignUp</a></li>
                                     {% endif %}
                                 </ul>
                             </div>

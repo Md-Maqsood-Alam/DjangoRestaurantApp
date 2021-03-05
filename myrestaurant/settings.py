@@ -45,12 +45,14 @@ INSTALLED_APPS = [
     #local
     'coreapp',
     'customers',
+    'foodcart',
     
     #3rd party
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -76,10 +78,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processor.cart_total_amount',
             ],
         },
     },
 ]
+
+CART_SESSION_ID= 'cart'
 
 WSGI_APPLICATION = 'myrestaurant.wsgi.application'
 
@@ -146,7 +151,7 @@ ACCOUNT_LOGOUT_REDIRECT_='/'
 ACCOUNT_LOGOUT_ON_GET=True
 ACCOUNT_SIGNUP_REDIRECT_URL='/customer/profileCreate/'
 ACCOUNT_SESSION_REMEMBER=True
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE=False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE=True
 ACCOUNT_USERNAME_REQUIRED=False
 ACCOUNT_UNIQUE_EMAIL=True
 ACCOUNT_EMAIL_REQUIRED=True

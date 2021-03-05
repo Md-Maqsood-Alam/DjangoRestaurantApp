@@ -13,7 +13,7 @@
                             <p>Tempting Flavours | Quick Deliveries | Rewarding Service</p>
                             <div class="book-btn">
                                 <a href="{% url 'reservation' %}" class="table-btn hvr-underline-from-center">Book my Table</a>
-                                <a href="#" class="table-btn hvr-underline-from-center">Order Delivery</a>
+                                <a href="{% url 'order' %}" class="table-btn hvr-underline-from-center">Order Delivery</a>
                             </div>
                         </div>
                         <!-- end banner-cell -->
@@ -54,6 +54,42 @@
         </div>
         <!-- end container -->
     </div>
+    <div class="special-menu pad-top-100 parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <h2 class="block-title color-white text-center"> Today's Special </h2>
+                    </div>
+                    <div class="special-box">
+                        <div id="owl-demo">
+                        	{% for dishItem in todaysSpecials %}
+                            <div class="item item-type-zoom">
+                                <a href="{% url 'cart_add' dishItem.id %}" class="item-hover">
+                                    <div class="item-info">
+                                        <div class="headline">
+                                            {{ dishItem.name }}
+                                            <div class="line"></div>
+                                            <div class="dit-line">{{ dishItem.description }}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="item-img">
+                                    <img src="{% static dishItem.img %}" alt="sp-menu">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- end special-box -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end special-menu -->
     <div id="menu" class="menu-main pad-top-100 pad-bottom-100">
         <div class="container">
             <div class="row">
@@ -164,7 +200,7 @@
             <div class="row">
                 <div class="reserve-book-btn text-center">
                     <button class="hvr-underline-from-center"><a href="{% url 'reservation' %}" >Book my Table</a></button>
-                    <button  class="hvr-underline-from-center"><a href="#">Order Delivery</a></button>
+                    <button  class="hvr-underline-from-center"><a href="{% url 'order' %}">Order Delivery</a></button>
                 </div>
                 <!-- end reservations-box -->
             </div>

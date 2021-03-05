@@ -5,6 +5,7 @@ from .forms import profileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 @login_required
 def profileView(request):
@@ -53,3 +54,12 @@ def profileView(request):
         else:
             form=profileForm()
     return render(request,'profile.html',{'form':form})
+
+@login_required
+def myaccount(request):
+    reservations=request.user.reservation_set.all()
+    try:
+        orders=sorted(list(request.user.customer.order_set.all()), key=lambda x: x.date_and_time, reverse=True)
+    except ObjectDoesNotExist:
+        orders=[]
+    return render(request,'myaccount.html',{'orders': orders, 'reservations': reservations})

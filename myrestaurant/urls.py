@@ -21,4 +21,5 @@ urlpatterns = [
     path('',include('coreapp.urls')),
     path('accounts/',include('allauth.urls')),
     path('customer/',include('customers.urls')),
+    path('cart/',include('foodcart.urls')),
 ]

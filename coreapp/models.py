@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from customers.models import Customer
 # Create your models here.
 class Dish(models.Model):
     dishTypesChoices=(
@@ -18,9 +19,11 @@ class Dish(models.Model):
     img=models.CharField(max_length=300)
     description=models.TextField(blank=True)
     whetherNonVeg=models.BooleanField(default=True)
-    
+    available=models.BooleanField(default=True)    
     def __str__(self):
         return self.name
+class TodaysSpecials(models.Model):
+    dishes=models.ManyToManyField(Dish)
 
 class Reservation(models.Model):
     name=models.CharField(max_length=200)
@@ -33,3 +36,31 @@ class Reservation(models.Model):
 
     def __str__(self):
         return '{}|{}|{}'.format(self.date_and_time,self.num_people,self.name)
+
+class Order(models.Model):
+    statusChoices=(
+        ('Delivered','Delivered'),
+        ('On It\'s Way','On It\'s Way'),
+        ('Cancelled','Cancelled')
+        )
+    date_and_time=models.DateTimeField()
+    customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
+    dishes_ordered=models.TextField()
+    dishes_total=models.PositiveIntegerField()
+    delivery_charge=models.PositiveIntegerField()
+    delivery_address=models.TextField()
+    status=models.CharField(max_length=11,choices=statusChoices, default='On It\'s Way')
+    
+    @property
+    def orderId(self):
+        return '{}{}{}{}'.format(
+            self.date_and_time.year,
+            self.date_and_time.month,
+            self.user.id,
+            self.id
+            )
+    
+    @property    
+    def total_bill(self):
+        return self.dishes_total+self.delivery_charge
+    
