@@ -3,15 +3,15 @@
 {% load cart_tag %}
 {% block title %}Checkout{% endblock %}
 {% block content %}
-<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100" style="background: url({% static 'images/background.jpg' %}); background-position: center center; background-size: cover; background-repeat: no-repeat; backgroud-attachment: fixed;">
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100" style="background-color: #535353; background-image: url({% static 'images/background.jpg' %}); background-position: center center; background-size: cover; background-repeat: no-repeat; backgroud-attachment: fixed;">
     <div class="container">
         <div class="row">
-            <div class="form-reservations-box" style="width: 50%;">
+            <div class="form-reservations-box">
                 <br><br><br>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: rgb(236, 243, 247, 0.75); border-radius: 6px;">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                         <h2 class="block-title text-center" style="padding-top: 20px;">
-                    Checkout			
+                    Checkout
                 		</h2>
                         {% if request.session.cart|length > 0 %}
                         <h4 class="form-title">Please check your order and delivery address</h4><hr>
@@ -22,40 +22,40 @@
                     {% if request.session.cart|length > 0 %}
                     {% for key,value in request.session.cart.items %}
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <img src="{% static value.image %}" alt="{{ value.name }}" style="width: 20%; float: left;  margin: 5px;" class="img-rounded">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <img src="{% static value.image %}" alt="{{ value.name }}" style="width: 30%; float: left;  margin: 5px;" class="img-rounded">
                             <h3 style="text-align: center; font-size: 24px; font-family: 'nautilus_pompiliusregular'; padding: 20px; color: #e75b1e;">{{ value.name }}</h3>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                             <p style="text-align: center; font-size: 18px; font-family: serif; padding-top: 10px;">( &times; {{ value.quantity }} )</p>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-3 col-xs-3">
                             <p style="text-align: center; font-size: 18px; font-family: serif; padding-top: 10px;">&#8377; {{ value.price|multiply:value.quantity }}</p>
                         </div>
                     </div>
-                    {% endfor %}
+                    {% endfor %}<hr>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                             <p style="text-align: left; font-size: 20px;font-family: 'nautilus_pompiliusregular';">Item Total : </p>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <p style="text-align: right; font-size: 20px;font-family: serif; margin-right: 60px;">&#8377; {{ subtotal }}</p>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
+                            <p style="text-align: left; font-size: 20px;font-family: serif; margin-right: 60px;">&#8377; {{ subtotal }}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                             <p style="text-align: left; font-size: 20px;font-family: 'nautilus_pompiliusregular';">Delivery Charge : </p>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <p style="text-align: right; font-size: 20px;font-family: serif; margin-right: 60px">&#8377; {{ delivery_charge }}</p>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
+                            <p style="text-align: left; font-size: 20px;font-family: serif; margin-right: 60px">&#8377; {{ delivery_charge }}</p>
                         </div>
                     </div><hr>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                             <p style="text-align: left; font-size: 22px;font-family: 'nautilus_pompiliusregular'; color: #e75b1e;">To Pay : </p>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <button class="btn btn-default" style="float: right; text-align: right; font-size: 22px;font-family: serif; margin-right: 50px; color: #e75b1e;">&#8377; {{ to_pay }}</button>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
+                            <button class="btn btn-default" style="float: left; text-align: center; font-size: 22px;font-family: serif; margin-right: 50px; color: #e75b1e;">&#8377; {{ to_pay }}</button>
                         </div>
                     </div>
                     <form method="POST" action="" class="form-horizontal">
@@ -71,10 +71,10 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 text-center">
-                                <a type="button" href="{% url 'order' %}" class="btn btn-warning btn-lg btn-block" style="font-family: serif; font-size: 24px;" role="button"><strong>Back</strong></a>
+                                <a type="button" href="{% url 'order' %}" class="btn btn-primary btn-lg btn-block" style="font-family: serif; margin-bottom: 10px;" role="button"><strong>&#8592;Modify Order</strong></a>
                             </div>
                             <div class="col-sm-6 text-center">
-                                <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block" style="font-family: serif; font-size: 24px;"><strong>Place Order</strong></button>
+                                <button type="submit" name="submit" class="btn btn-success btn-lg btn-block" style="font-family: serif; margin-bottom: 10px;"><strong>Place Order</strong></button>
                             </div>
                         </div>
                     </form>

@@ -5121,3 +5121,63 @@ ValueError: Missing staticfiles manifest entry for 'images/apple-touch-icon.png'
 [06/Mar/2021 01:44:35] INFO [django.server:154] "GET /static/fonts/fontawesome-webfont.af7ae505a9ee.woff2?v=4.7.0 HTTP/1.1" 200 77160
 [06/Mar/2021 01:44:35] INFO [django.server:154] "GET /static/images/icon_top.99dcb864e2f8.png HTTP/1.1" 200 3263
 [06/Mar/2021 01:44:35] INFO [django.server:154] "GET /static/images/favicon.c4ca4238a0b9.ico HTTP/1.1" 200 1
+[05/Mar/2021 20:52:45] INFO [django.utils.autoreload:578] Watching for file changes with StatReloader
+[05/Mar/2021 20:52:45] DEBUG [django.utils.autoreload:267] Waiting for apps ready_event.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:273] Apps ready_event triggered. Sending autoreload_started signal.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/admin/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/auth/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/contenttypes/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/sessions/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/messages/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/whitenoise/runserver_nostatic/locale with glob **/*.mo.
+[05/Mar/2021 20:52:46] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/staticfiles/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/sites/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/coreapp/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/customers/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/foodcart/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/account/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/socialaccount/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/crispy_forms/locale with glob **/*.mo.
+[05/Mar/2021 20:52:47] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/cart/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] INFO [django.utils.autoreload:578] Watching for file changes with StatReloader
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:267] Waiting for apps ready_event.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:273] Apps ready_event triggered. Sending autoreload_started signal.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/admin/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/auth/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/contenttypes/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/sessions/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/messages/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/whitenoise/runserver_nostatic/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/staticfiles/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/sites/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/coreapp/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/customers/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/foodcart/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/account/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/socialaccount/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/crispy_forms/locale with glob **/*.mo.
+[07/Mar/2021 05:51:48] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/cart/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] INFO [django.utils.autoreload:578] Watching for file changes with StatReloader
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:267] Waiting for apps ready_event.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:273] Apps ready_event triggered. Sending autoreload_started signal.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/admin/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/auth/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/contenttypes/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/sessions/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/messages/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/whitenoise/runserver_nostatic/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/staticfiles/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/django/contrib/sites/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/coreapp/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/customers/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/DjangoRestaurantApp/foodcart/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/account/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/allauth/socialaccount/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/crispy_forms/locale with glob **/*.mo.
+[10/Mar/2021 19:10:58] DEBUG [django.utils.autoreload:226] Watching dir /home/maqsood/.virtualenvs/DjangoRestaurantApp-kVsEikdL/lib/python3.8/site-packages/cart/locale with glob **/*.mo.

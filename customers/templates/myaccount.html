@@ -3,12 +3,12 @@
 {% load order_tags %}
 {% block title %}My Account{% endblock %}
 {% block content %}
-<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100" style="background-image: url({% static 'images/background.jpg' %}); background-position: center center; background-size: cover; background-repeat: no-repeat; backgroud-attachment: fixed;" >
+<div id="reservation" class="reservations-main pad-top-100 pad-bottom-100" style="background-color: #535353; background-image: url({% static 'images/background.jpg' %}); background-position: center center; background-size: cover; background-repeat: no-repeat; backgroud-attachment: fixed;" >
     <div class="container">
         <div class="row">
             <div class="form-myaccount-box">
                 <br><br><br>
-                <div class="col-sm-4" style="background-color: rgb(236, 243, 247, 0.75); border-radius: 6px;">
+                <div class="col-sm-4" style="background-color: rgb(236, 243, 247, 0.75); border-radius: 6px; margin-top: 5px;">
                     <h2 class="block-title text-center" style="padding-top: 50px;">My Profile</h2><br><br>
                     <table class="table" style="border: none; font-size: 14px; font-family: Georgia; text-align: center;">
                         <tbody>
@@ -20,7 +20,7 @@
                     </table>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="text-center"> 
+                            <div class="text-center">
                             <a class="btn btn-primary btn-block" href="{% url 'profile_update' %}" style="font-family: Georgia; font-size: 16px;" role="button">Edit Profile</a>
                             </div><br>
                         </div>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-7" style="background-color: rgb(236, 243, 247, 0.75); border-radius: 6px; margin: 5px;">
                     <h2 class="block-title text-center" style="padding-top: 30px;">My Orders</h2><br>
                     {% if orders %}
                     <table class="table" style="border: none; font-size: 14px; font-family: Georgia; text-align: left; color: #fff;">
@@ -46,7 +46,7 @@
                        		<td>{{ order.date_and_time|date:"M j, Y" }}</td>
                            	<td>{% for dish in order|order_dishes_quantity %}{{ dish.0 }} (&times; {{ dish.1 }}){% if not forloop.last %} | {% endif %}{% endfor %}</td>
                            	<td>&#8377; {{ order.total_bill }}</td>
-                           	<td style="color: lightseagreen;">{{ order.status }}</td>
+                           	<td>{{ order.status }}</td>
                        	</tr>
                         {% endfor %}
                     	</tbody>
@@ -69,13 +69,13 @@
                        		<td>{{ reservation.date_and_time|time:"h:i A" }}</td>
 							<td>{{ reservation.name }}</td>
                            	<td style="text-align: center;">{{ reservation.num_people }}</td>
-                           	<td style="color: lightseagreen;">{{ reservation.occasion }}</td>
+                           	<td>{{ reservation.occasion }}</td>
                        	</tr>
                         {% endfor %}
                     	</tbody>
                     </table>
                     {% else %}
-                    <h4 class="form-title">Not reservations yet!<a href="{% url 'reservation' %}" style="color: white;">Make One now.</a></h4><hr>
+                    <h4 class="form-title">Not reservations yet!<a href="{% url 'reservation' %}" style="color: white;"> Make One now.</a></h4><hr>
                     {% endif %}
                 </div>
             </div>

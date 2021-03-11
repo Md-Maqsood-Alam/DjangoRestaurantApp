@@ -4,7 +4,6 @@ from django.urls import reverse
 from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from foodcart.views import cart_clear_silent
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
@@ -54,19 +53,19 @@ def order(request):
         return render(request, 'order.html', {'menu': menu, 'subtotal': subtotal, 'searched_for': request.GET['q']})
     else:
         return render(request, 'order.html', {'menu':menu, 'subtotal': subtotal})
-    
+
 @login_required
 def checkout(request):
     if 'cart' not in request.session:
         return redirect(reverse('home'))
     subtotal=sum((int(request.session['cart'][i]['price'])*int(request.session['cart'][i]['quantity']) for i in request.session['cart']))
     delivery_charge = 20 if subtotal<300 else 0
-    to_pay = subtotal+delivery_charge  
+    to_pay = subtotal+delivery_charge
     try:
         currentCustomer=request.user.customer
     except ObjectDoesNotExist:
         messages.add_message(request,messages.INFO,"Please complete your profile to place an order.")
-        return redirect(reverse('profile_create'))    
+        return redirect(reverse('profile_create'))
     if request.method=='POST':
         try:
             dishesOrdered={ request.session['cart'][i]['product_id']:(request.session['cart'][i]['name'],request.session['cart'][i]['quantity']) for i in request.session['cart'] }
@@ -85,6 +84,5 @@ def checkout(request):
         except:
             messages.add_message(request, messages.INFO, "Something went wrong! Please order by call or try after sometime.")
             return redirect(reverse('home'))
-    else:            
+    else:
         return render(request,'checkout.html',{'subtotal': subtotal, 'delivery_charge': delivery_charge, 'to_pay': to_pay})
-        

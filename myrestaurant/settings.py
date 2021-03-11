@@ -28,7 +28,7 @@ SECRET_KEY = 'cckxz8emv*(arbpv3sng48&7gd29@8zbf1&*!!$at$63%8%*-$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','maqsood.pythonanywhere.com']
 
 
 # Application definition
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'coreapp',
     'customers',
     'foodcart',
-    
+
     #3rd party
     'allauth',
     'allauth.account',

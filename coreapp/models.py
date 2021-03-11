@@ -19,7 +19,7 @@ class Dish(models.Model):
     img=models.CharField(max_length=300)
     description=models.TextField(blank=True)
     whetherNonVeg=models.BooleanField(default=True)
-    available=models.BooleanField(default=True)    
+    available=models.BooleanField(default=True)
     def __str__(self):
         return self.name
 class TodaysSpecials(models.Model):
@@ -50,7 +50,7 @@ class Order(models.Model):
     delivery_charge=models.PositiveIntegerField()
     delivery_address=models.TextField()
     status=models.CharField(max_length=11,choices=statusChoices, default='On It\'s Way')
-    
+
     @property
     def orderId(self):
         return '{}{}{}{}'.format(
@@ -59,8 +59,10 @@ class Order(models.Model):
             self.user.id,
             self.id
             )
-    
-    @property    
+
+    @property
     def total_bill(self):
         return self.dishes_total+self.delivery_charge
-    
+
+    def __str__(self):
+        return '{}|{}|{}|{}|{}|{}'.format(self.status,self.date_and_time,self.customer.full_name,self.dishes_ordered,self.total_bill,self.customer.phone_number)
